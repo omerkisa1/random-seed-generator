@@ -1,0 +1,35 @@
+BASLA
+  |
+  v
+Seed (Baslangic Degeri) Al
+  |
+  v
+Sabit Degerleri Belirle (j=24, k=55, m=2^64)
+  |
+  v
+Tamponu (Buffer) Doldur (LCG Kullanarak)
+(55 adet baslangic degeri uret)
+  |
+  v
++---> Sayi Uretme Istegi
+|     |
+|     v
+|   Indeksleri Hesapla
+|   (idx_j = index - j, idx_k = index - k)
+|     |
+|     v
+|   Yeni Degeri Hesapla
+|   val = (buffer[idx_j] + buffer[idx_k]) mod m
+|     |
+|     v
+|   Tamponu Guncelle
+|   buffer[index] = val
+|     |
+|     v
+|   Indeksi Ilerlet
+|   index = (index + 1) mod k
+|     |
+|     v
+|   Sayiyi Dondur
+|     |
++-----+

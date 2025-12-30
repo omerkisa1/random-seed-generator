@@ -1,0 +1,16 @@
+Bu calismada Lagged Fibonacci Generator (LFG) tabanli sozde rastgele sayi uretici (PRNG) analiz edilmistir.
+Algoritma deterministiktir ve ayni baslangic degeri (seed) kullanildiginda her calistirmada ayni sayi dizisini uretmektedir.
+
+Kullanilan Parametreler:
+- j = 24
+- k = 55 (Tampon boyutu)
+- m = 2^64 (Modulus)
+- Operasyon: Toplama (+)
+
+Yapilan incelemelerde:
+- Baslangic durumu (buffer) Linear Congruential Generator (LCG) ile doldurulmaktadir.
+- LFG, basit LCG'ye gore cok daha uzun periyotlara sahiptir.
+- Istatistiksel olarak LCG'den daha basarilidir ancak kriptografik olarak guvenli degildir.
+- Hizli calisir ve donanim/yazilim implementasyonu kolaydir.
+
+Sonuc olarak algoritma simulasyon ve modelleme icin uygundur ancak guvenlik gerektiren uygulamalar icin ek islemler gerektirebilir.

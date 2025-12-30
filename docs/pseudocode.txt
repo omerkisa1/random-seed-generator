@@ -1,0 +1,32 @@
+Girdi: Baslangic degeri (seed)
+Basla
+    j = 24
+    k = 55
+    m = 2^64
+    
+    // Tampon (Buffer) Başlatma (LCG ile)
+    state_buffer = []
+    temp_state = seed
+    lcg_a = 6364136223846793005
+    lcg_c = 1442695040888963407
+    
+    Dongu (k defa):
+        temp_state = (lcg_a * temp_state + lcg_c) mod m
+        state_buffer.ekle(temp_state)
+    Dongu Sonu
+    
+    index = 0
+    
+    // Sayı Üretme Fonksiyonu
+    Fonksiyon next():
+        idx_j = (index - j) mod k
+        idx_k = (index - k) mod k
+        
+        new_val = (state_buffer[idx_j] + state_buffer[idx_k]) mod m
+        
+        state_buffer[index] = new_val
+        index = (index + 1) mod k
+        
+        Dondur new_val
+    Fonksiyon Sonu
+Bitir
